@@ -21,7 +21,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                def tfHome = tool name: 'ANSIBLE'
                 env.PATH = "${tfHome}:${env.PATH}"
-                 bat 'ansible --version'
+                 
                     
             }
             }
