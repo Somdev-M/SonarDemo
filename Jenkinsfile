@@ -20,6 +20,7 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                def tfHome = tool name: 'ANSIBLE'
+                    echo "thHome = ${thHome}"
                 env.PATH = "${tfHome}:${env.PATH}"
                  
                     
