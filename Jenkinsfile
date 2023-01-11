@@ -21,7 +21,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                def tfHome = tool name: 'ANSIBLE'
                 env.PATH = "${tfHome}:${env.PATH}"
-                 sh 'ansible --version'
+                 bat 'ansible --version'
                     
             }
             }
@@ -31,7 +31,7 @@ pipeline {
          stage('Execute Maven') {
            steps {
              
-                sh 'mvn clean install'             
+                bat 'mvn clean install'             
           }
         }
         
@@ -46,7 +46,7 @@ pipeline {
                  
              
                
-               sh "ansible-playbook main.yml -i inventories/dev/hosts --user jenkins --key-file ~/.ssh/id_rsa"
+               bat "ansible-playbook main.yml -i inventories/dev/hosts --user jenkins --key-file ~/.ssh/id_rsa"
 
                
             
