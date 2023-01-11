@@ -23,6 +23,7 @@ pipeline {
                     echo "thHome = ${thHome}"
                 env.PATH = "${tfHome}:${env.PATH}"
                   //  echo "PATH!!!! = ${env.PATH}"
+                    bat 'ANSIBLE --version'
                  
                     
             }
